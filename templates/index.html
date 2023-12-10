@@ -1,0 +1,53 @@
+{% extends "layout.html"%}
+{% block title %}
+Dog Breed Recognition
+{% endblock %}
+ 
+{% block content %}
+<section>
+ 
+    <header>
+        <h1>Dog Breed Recognition</h1>
+        <p>A webapp to detect a dog breed. Just drop an image of dog
+            and see results.</p>
+    </header>
+ 
+ 
+    <section>
+        <section>
+ 
+            <!-- Upload image input-->
+            <form enctype="multipart/form-data" method="POST">
+                <section>
+                    
+                    <input name="file" type="file">
+                    <label>Choose image</label>
+                    <section>
+                        <label> <i
+                                ></i><small
+                                >Choose image</small></label>       
+                    </section>
+                </section>
+ 
+ 
+                <!-- Uploaded image area-->
+                <p>The uploaded image will be rendered inside the box
+                    below.</p>
+                <section><img alt="" name="imageResult"
+                                                  src="#"></section>
+ 
+                <!-- Submit button-->
+                <section>
+                    <section>
+                        <section>
+                            <input type="submit" value="Submit"/>
+                        </section>
+                    </section>
+                </section>
+            </form>
+ 
+        </section>
+    </section>
+</section>
+ 
+{% endblock %}

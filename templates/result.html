@@ -1,0 +1,33 @@
+{% extends "layout.html"%}
+{% block title %}
+Dog Breed Prediction
+{% endblock %}
+ 
+{% block content %}
+<div>
+ 
+    <header>
+        <h1>Best Dog Breed Prediction</h1>
+        
+    </header>
+    <header>
+        
+       
+        <h2>prediction conf_score%</h2>
+        
+        <p>You will see predicted dog breeds of the input image and theirs confidence score. Class Other is a sum of predicted dog breeds which obtained less than 5%.</p>
+
+            <!--Different results-->
+            <h2>
+                Obtained conf_score class confidence score.
+            </h2>
+        
+            <p>
+                We cannot predict a dog breed based on uploaded file. 
+                Please upload another image of dog.
+            </p>
+
+    </header>
+
+</section>
+{% endblock %}

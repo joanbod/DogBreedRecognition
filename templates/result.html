@@ -4,25 +4,25 @@ Dog Breed Prediction
 {% endblock %}
  
 {% block content %}
-<div>
+<div class="container py-5">
  
-    <header>
-        <h1>Best Dog Breed Prediction</h1>
+    <header class="text-white text-center">
+        <h1 class="display-4">Best Dog Breed Prediction</h1>
         
     </header>
-    <header>
+    <header class="text-white text-center">
         
        
-        <h2>prediction conf_score%</h2>
+        <h2 class="display-5 text-dark font-weight-bold">prediction conf_score%</h2>
         
-        <p>You will see predicted dog breeds of the input image and theirs confidence score. Class Other is a sum of predicted dog breeds which obtained less than 5%.</p>
+        <p class="lead mb-5">You will see predicted dog breeds of the input image and theirs confidence score. Class Other is a sum of predicted dog breeds which obtained less than 5%.</p>
 
             <!--Different results-->
-            <h2>
+            <h2 class="display-5 text-dark font-weight-bold">
                 Obtained conf_score class confidence score.
             </h2>
         
-            <p>
+            <p class="lead mb-5 text-dark"></p>
                 We cannot predict a dog breed based on uploaded file. 
                 Please upload another image of dog.
             </p>

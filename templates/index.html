@@ -4,43 +4,44 @@ Dog Breed Recognition
 {% endblock %}
  
 {% block content %}
-<section>
+<section class="container py-5">
  
-    <header>
-        <h1>Dog Breed Recognition</h1>
-        <p>A webapp to detect a dog breed. Just drop an image of dog
+    <header class="text-white text-center">
+        <h1 class="display-4">Dog Breed Recognition</h1>
+        <p class="lead mb-5">A webapp to detect a dog breed. Just drop an image of dog
             and see results.</p>
     </header>
  
  
-    <section>
-        <section>
+    <section class="row py-4">
+        <section class="col-lg-6 mx-auto">
  
             <!-- Upload image input-->
-            <form enctype="multipart/form-data" method="POST">
-                <section>
+            <form action="{{ url_for('predict_image_file') }}" enctype="multipart/form-data" method="POST">
+                <section class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
                     
-                    <input name="file" type="file">
-                    <label>Choose image</label>
-                    <section>
-                        <label> <i
-                                ></i><small
-                                >Choose image</small></label>       
+                    <input class="form-control border-0" id="upload-image" name="file" type="file">
+                    <label class="font-weight-light text-muted" for="upload-image" id="upload-image-name">Choose image</label>
+                    <section class="input-group-append">
+                        <label class="btn btn-light m-0 rounded-pill px-4" for="upload-image"> <i
+                                class="fa fa-cloud-upload mr-2 text-muted"></i><small
+                                class="text-uppercase font-weight-bold text-muted" for="upload-image">Choose image</small></label>       
                     </section>
                 </section>
  
  
                 <!-- Uploaded image area-->
-                <p>The uploaded image will be rendered inside the box
+                <p class="font-italic text-white text-center">The uploaded image will be rendered inside the box
                     below.</p>
-                <section><img alt="" name="imageResult"
+                <section class="image-area mt-4"><img alt="" class="img-fluid rounded shadow-sm mx-auto d-block"
+                                                  id="imageResult" name="imageResult"
                                                   src="#"></section>
  
                 <!-- Submit button-->
-                <section>
-                    <section>
-                        <section>
-                            <input type="submit" value="Submit"/>
+                <section class="container">
+                    <section class="row">
+                        <section class="col text-center">
+                            <input class="btn btn-primary my-3" type="submit" value="Submit"/>
                         </section>
                     </section>
                 </section>

@@ -12,21 +12,79 @@ Dog Breed Prediction
     </header>
     <header class="text-white text-center">
         
-       
-        <h2 class="display-5 text-dark font-weight-bold">prediction conf_score%</h2>
+        {% if prediction %}
+            {% if values[0] > 35 %}
+        <h2 class="display-5 text-dark font-weight-bold">{{prediction}} {{values[0]}}%</h2>
         
         <p class="lead mb-5">You will see predicted dog breeds of the input image and theirs confidence score. Class Other is a sum of predicted dog breeds which obtained less than 5%.</p>
+ 
+        <canvas id="chartBreeds" class="canvas-area" width="350" height="350"></canvas>
 
-            <!--Different results-->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>   
+
+        var ctx = document.getElementById('chartBreeds').getContext('2d');
+        var chartBreeds = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: {{labels | safe}},
+                datasets: [{
+                    data: {{values | safe}},
+                    borderWidth: 0,
+                }]
+            },
+            options: {
+                responsive: false,                
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            font: {
+                                size: 18, 
+                                color: 'white',
+                            },
+                        },
+                    },
+                    datalabels: {
+                        formatter: function(value) {
+                            return value + '%';
+                        }
+                    },
+                    doughnutlabel: {
+                        labels: [
+                        {
+                            text: '%1 %p',
+                            font: {
+                            size: 18,
+                            weight: 'bold',
+                            color: 'white',
+                            },
+                        },
+                        {
+                            text: 'total',
+                            color: 'white',
+                        },
+                        ],
+                    },
+                }
+            }
+        });
+        </script>
+            {% else %}
+
             <h2 class="display-5 text-dark font-weight-bold">
-                Obtained conf_score class confidence score.
+                Obtained {{values[0]}}% {{labels[0]}} confidence score.
             </h2>
         
-            <p class="lead mb-5 text-dark"></p>
+            <p class="lead mb-5 text-dark">
                 We cannot predict a dog breed based on uploaded file. 
                 Please upload another image of dog.
             </p>
 
+            {% endif %}
+        {% else %}
+        <h2 class="display-4 text-dark font-weight-bold">{{error}}</h2>
+        {% endif %}
     </header>
 
 </section>

@@ -7,7 +7,7 @@ import pandas as pd
  
 # Loading model
 
-model = load_model('path')
+model = load_model('D:\studia\sem7\model\Model_Final_.h5')
  
 # Preparing and pre-processing the image
 def preprocess_img(img_path):
@@ -21,7 +21,7 @@ def preprocess_img(img_path):
 # Predicting function
 def predict_results(predict_img_array):
     # Load the class mapping from CSV
-    csv_file_path = "path"  
+    csv_file_path = "D:\studia\sem7\model\class_indexes.csv"  
     df = pd.read_csv(csv_file_path) 
     predictions = model.predict(predict_img_array)
 

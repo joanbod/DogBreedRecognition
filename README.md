@@ -10,8 +10,23 @@ practical use.
 - [joanbod](https://github.com/joanbod) - Planning the construction of the model. Support in implementation of the model. Application implementation: adding styles, uploading files, handling prediction.
 - [majkel99](https://github.com/majkel99) - Data preparation and preprocessing. Model implementation: construction of model layers, testing.
 
-### Example of use
+### Examples
 The main functionality of the application is to provide a tool for recognition of dog breeds using interactive web interface.
+
+Home page with a form to upload a photo:
+![ Home page with a form to upload a photo](images/main_page.png)
+
+Presentation of the page on a smartphone screen with an uploaded photo:
+![Presentation of the page on a smartphone screen with an uploaded photo](images/responsive.png)
+
+Example of a prediction page:
+![Example of a prediction page](images/prediction_made.png)
+
+Error message if file uploaded with invalid extension:
+![Error message if file uploaded with invalid extension](images/file_cannot_be_processed.png)
+
+Error message if file is not selected:
+![Error message if file is not selected](images/no_selected_file.png)
 
 ### Technology
 - tensorflow, 
